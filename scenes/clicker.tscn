@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://ewqvn70hrw1j"]
+
+[ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
+[ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
+[ext_resource type="Texture2D" uid="uid://bfuj05a8ryv2o" path="res://images/8e5ee3be-fddb-4b85-b9e1-9ff2e379a377.png" id="3_smtw7"]
+[ext_resource type="Script" uid="uid://b7gbn4i5by3gw" path="res://scripts/label.gd" id="4_kmipb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
+texture = ExtResource("2_kmipb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grrbb"]
+texture = ExtResource("3_smtw7")
+
+[sub_resource type="SystemFont" id="SystemFont_tph31"]
+font_names = PackedStringArray("In your face, Joffrey! ")
+
+[node name="Clicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tph31")
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -719.0
+offset_right = 1044.5557
+offset_bottom = 992.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6ovwv")
+
+[node name="AmongUs" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.078
+anchor_top = 0.312
+anchor_right = 0.259
+anchor_bottom = 0.70600003
+offset_left = 0.14399719
+offset_top = -0.17601013
+offset_right = -0.36801147
+offset_bottom = 1.7333679
+pivot_offset = Vector2(104, 128.611)
+theme_override_styles/normal = SubResource("StyleBoxTexture_grrbb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_grrbb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_grrbb")
+theme_override_styles/focus = SubResource("StyleBoxTexture_grrbb")
+
+[node name="CPS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 494.0
+offset_right = 377.0
+offset_bottom = 544.0
+theme_override_fonts/font = SubResource("SystemFont_tph31")
+theme_override_font_sizes/font_size = 50
+text = "Amongs Per Second: 0"
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.080000006
+anchor_right = 0.27400002
+anchor_bottom = 0.23500001
+offset_left = -0.16800308
+offset_top = 0.15999603
+offset_right = 0.35198975
+offset_bottom = -0.28001404
+theme_override_fonts/font = SubResource("SystemFont_tph31")
+theme_override_font_sizes/font_size = 100
+text = "Amongs: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_kmipb")
+
+[node name="Shop" type="CanvasLayer" parent="."]
+
+[connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
+[connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://221atvaptn40"
+path="res://.godot/imported/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3-35350b1aec564666cc25bd0711e1dec6.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3"
+dest_files=["res://.godot/imported/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3-35350b1aec564666cc25bd0711e1dec6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

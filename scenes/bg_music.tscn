@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://beqyg4bd64e5w"]
+
+[ext_resource type="AudioStream" uid="uid://221atvaptn40" path="res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3" id="1_f6gl3"]
+
+[node name="BGMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_f6gl3")
+volume_db = -6.563
+autoplay = true
+bus = &"Songs"
