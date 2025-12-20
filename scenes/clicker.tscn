@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=27 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -19,30 +19,36 @@ font_names = PackedStringArray("In your face, Joffrey! ")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmipb"]
 bg_color = Color(0.5651941, 0.053842418, 0.002012154, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="SystemFont" id="SystemFont_grrbb"]
+font_names = PackedStringArray("In your face, Joffrey! ")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smtw7"]
 bg_color = Color(0.829089, 0.10738476, 0, 1)
 border_width_right = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
+corner_radius_top_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtuxs"]
 bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_right = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
+corner_radius_top_left = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ovwv"]
 bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_right = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 20
+corner_radius_top_left = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmipb"]
+
+[sub_resource type="SystemFont" id="SystemFont_61uux"]
+font_names = PackedStringArray("In your face, Joffrey! ")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grrbb"]
 bg_color = Color(0.827451, 0.101960786, 0, 1)
@@ -64,29 +70,31 @@ border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smtw7"]
 
+[sub_resource type="SystemFont" id="SystemFont_mymv7"]
+font_names = PackedStringArray("In your face, Joffrey! ")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mymv7"]
 bg_color = Color(0.827451, 0.101960786, 0, 1)
 border_width_left = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_right = 20
+corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwfre"]
 bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_left = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_right = 20
+corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc8na"]
 bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_left = 14
 border_color = Color(1, 1, 1, 1)
-corner_radius_top_right = 20
+corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ovwv"]
 
 [node name="Clicker" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -108,15 +116,16 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6ovwv")
 [node name="AmongUs" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.078
-anchor_top = 0.312
-anchor_right = 0.259
-anchor_bottom = 0.70600003
-offset_left = 0.14399719
-offset_top = -0.17601013
-offset_right = -0.36801147
-offset_bottom = 1.7333679
-pivot_offset = Vector2(104, 128.611)
+anchor_left = 0.102000006
+anchor_top = 0.305
+anchor_right = 0.275
+anchor_bottom = 0.703
+offset_left = -0.8400116
+offset_top = -0.3999939
+offset_bottom = -0.23999023
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(166, 215)
 theme_override_styles/normal = SubResource("StyleBoxTexture_grrbb")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_grrbb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_grrbb")
@@ -124,82 +133,116 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_grrbb")
 
 [node name="CPS" type="Label" parent="."]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 494.0
-offset_right = 377.0
-offset_bottom = 544.0
+offset_left = 85.0
+offset_top = 843.0
+offset_right = 686.0
+offset_bottom = 943.0
 theme_override_fonts/font = SubResource("SystemFont_tph31")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 100
 text = "Amongs Per Second: 0"
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.034
+anchor_left = 0.046000004
 anchor_top = 0.080000006
-anchor_right = 0.27400002
-anchor_bottom = 0.23500001
-offset_left = -0.16800308
-offset_top = 0.15999603
-offset_right = 0.35198975
-offset_bottom = -0.28001404
+anchor_right = 0.33400002
+anchor_bottom = 0.266
+offset_left = -0.32000732
+offset_top = 0.59999084
+offset_right = -0.2800293
+offset_bottom = -0.27999878
 theme_override_fonts/font = SubResource("SystemFont_tph31")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 200
 text = "Amongs: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_kmipb")
 
-[node name="Shop" type="CanvasLayer" parent="."]
+[node name="ShopSystem" type="CanvasLayer" parent="."]
 
-[node name="ShopPanel" type="Panel" parent="Shop"]
-offset_left = 455.0
-offset_top = 52.0
-offset_right = 1043.0
-offset_bottom = 540.0
+[node name="ShopPanel" type="Panel" parent="ShopSystem"]
+offset_left = 820.0
+offset_top = 166.0
+offset_right = 1846.0
+offset_bottom = 918.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kmipb")
 
-[node name="ClickerShop" type="Button" parent="Shop/ShopPanel"]
-layout_mode = 1
-offset_right = 196.0
-offset_bottom = 64.0
+[node name="Buttons" type="Node" parent="ShopSystem/ShopPanel"]
+
+[node name="ClickerShop" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
+offset_left = 820.0
+offset_top = 166.0
+offset_right = 1164.0
+offset_bottom = 273.0
+theme_override_fonts/font = SubResource("SystemFont_grrbb")
+theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_smtw7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qtuxs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6ovwv")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kmipb")
+text = "Clickers"
 script = ExtResource("5_smtw7")
 
-[node name="UserShop" type="Button" parent="Shop/ShopPanel"]
-layout_mode = 1
+[node name="UserShop" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_right = 100.0
-offset_bottom = 64.0
+offset_left = 202.0
+offset_top = 166.0
+offset_right = 544.0
+offset_bottom = 273.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_fonts/font = SubResource("SystemFont_61uux")
+theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_grrbb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_alqnx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_61uux")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_smtw7")
+text = "Amongs"
 script = ExtResource("6_grrbb")
 
-[node name="Achievements" type="Button" parent="Shop/ShopPanel"]
-layout_mode = 1
+[node name="Achievements" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -196.0
-offset_bottom = 64.0
+offset_left = -417.0
+offset_top = 166.0
+offset_right = -75.0
+offset_bottom = 273.0
 grow_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_mymv7")
+theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_mymv7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_iwfre")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bc8na")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6ovwv")
+text = "BADGES"
 script = ExtResource("7_61uux")
+
+[node name="ClickersUpgrades" type="ScrollContainer" parent="ShopSystem/ShopPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -229.0
+offset_right = 463.0
+offset_bottom = 341.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
-[connection signal="pressed" from="Shop/ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
-[connection signal="pressed" from="Shop/ShopPanel/UserShop" to="." method="_on_user_shop_pressed"]
-[connection signal="pressed" from="Shop/ShopPanel/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/ClickerShop" to="." method="_on_clicker_shop_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/UserShop" to="." method="_on_user_shop_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/Achievements" to="." method="_on_achievements_pressed"]
