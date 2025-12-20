@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=28 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b4efh0vdo04km" path="res://scripts/clicker_shop.gd" id="5_smtw7"]
 [ext_resource type="Script" uid="uid://b0rvi1i3ck4x3" path="res://scripts/user_shop.gd" id="6_grrbb"]
 [ext_resource type="Script" uid="uid://degaiwdg2jnid" path="res://scripts/achievements.gd" id="7_61uux"]
+[ext_resource type="FontFile" uid="uid://dwh2nitrs85pm" path="res://assets/fonts/In your face, joffrey!.ttf" id="8_61uux"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -228,7 +229,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -463.0
+offset_left = -343.0
 offset_top = -229.0
 offset_right = 463.0
 offset_bottom = 341.0
@@ -238,8 +239,129 @@ horizontal_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
+
+[node name="Upgrade1" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Crewmate Hands (generates 0.1 per second)"
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "15 aps"
+
+[node name="Upgrade2" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Tiny Impostor (Generates 1 per second)"
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "100 APS"
+
+[node name="Upgrade3" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = " Broken Task Button (GENERATES 5 PER SECOND)"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "500 APS"
+
+[node name="Upgrade4" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Emergency Button (generates 15 per second)"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "2000 aps"
+
+[node name="Upgrade5" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Auto task completer (generates 80 per second)"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "10,000 APS"
+
+[node name="Upgrade6" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Vent cLICKER (GENERATES 300 PER SECOND)"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "50,000 APS"
+
+[node name="Upgrade7" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
+custom_minimum_size = Vector2(596, 58)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "Security camera farm (generates 1,200 per second)"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+text = "200,000 APS"
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
