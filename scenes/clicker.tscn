@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=18 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
 [ext_resource type="Texture2D" uid="uid://bfuj05a8ryv2o" path="res://images/8e5ee3be-fddb-4b85-b9e1-9ff2e379a377.png" id="3_smtw7"]
 [ext_resource type="Script" uid="uid://b7gbn4i5by3gw" path="res://scripts/label.gd" id="4_kmipb"]
+[ext_resource type="Script" uid="uid://b4efh0vdo04km" path="res://scripts/clicker_shop.gd" id="5_smtw7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -13,6 +14,57 @@ texture = ExtResource("3_smtw7")
 
 [sub_resource type="SystemFont" id="SystemFont_tph31"]
 font_names = PackedStringArray("In your face, Joffrey! ")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmipb"]
+bg_color = Color(0.5651941, 0.053842418, 0.002012154, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smtw7"]
+bg_color = Color(0.829089, 0.10738476, 0, 1)
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtuxs"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ovwv"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmipb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grrbb"]
+bg_color = Color(0.827451, 0.101960786, 0, 1)
+border_width_left = 14
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61uux"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
+border_width_left = 14
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mymv7"]
+bg_color = Color(0.827451, 0.101960786, 0, 1)
+border_width_left = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bc8na"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
+border_width_left = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 20
 
 [node name="Clicker" type="Control"]
 layout_mode = 3
@@ -81,6 +133,46 @@ vertical_alignment = 1
 script = ExtResource("4_kmipb")
 
 [node name="Shop" type="CanvasLayer" parent="."]
+
+[node name="ShopPanel" type="Panel" parent="Shop"]
+offset_left = 455.0
+offset_top = 52.0
+offset_right = 1043.0
+offset_bottom = 540.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kmipb")
+
+[node name="ClickerShop" type="Button" parent="Shop/ShopPanel"]
+layout_mode = 1
+offset_right = 196.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_smtw7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qtuxs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ovwv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kmipb")
+script = ExtResource("5_smtw7")
+
+[node name="UserShop" type="Button" parent="Shop/ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_grrbb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61uux")
+
+[node name="Settings" type="Button" parent="Shop/ShopPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mymv7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bc8na")
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
