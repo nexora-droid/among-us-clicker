@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=24 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
 [ext_resource type="Texture2D" uid="uid://bfuj05a8ryv2o" path="res://images/8e5ee3be-fddb-4b85-b9e1-9ff2e379a377.png" id="3_smtw7"]
 [ext_resource type="Script" uid="uid://b7gbn4i5by3gw" path="res://scripts/label.gd" id="4_kmipb"]
 [ext_resource type="Script" uid="uid://b4efh0vdo04km" path="res://scripts/clicker_shop.gd" id="5_smtw7"]
+[ext_resource type="Script" uid="uid://b0rvi1i3ck4x3" path="res://scripts/user_shop.gd" id="6_grrbb"]
+[ext_resource type="Script" uid="uid://degaiwdg2jnid" path="res://scripts/achievements.gd" id="7_61uux"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -48,14 +50,28 @@ border_width_left = 14
 border_width_right = 14
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alqnx"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
+border_width_left = 14
+border_width_right = 14
+border_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61uux"]
 bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_left = 14
 border_width_right = 14
 border_color = Color(1, 1, 1, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_smtw7"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mymv7"]
 bg_color = Color(0.827451, 0.101960786, 0, 1)
+border_width_left = 14
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwfre"]
+bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_left = 14
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 20
@@ -65,6 +81,8 @@ bg_color = Color(1, 0.34904182, 0.25671515, 1)
 border_width_left = 14
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ovwv"]
 
 [node name="Clicker" type="Control"]
 layout_mode = 3
@@ -161,9 +179,12 @@ offset_right = 100.0
 offset_bottom = 64.0
 grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_grrbb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alqnx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_61uux")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_smtw7")
+script = ExtResource("6_grrbb")
 
-[node name="Settings" type="Button" parent="Shop/ShopPanel"]
+[node name="Achievements" type="Button" parent="Shop/ShopPanel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -172,7 +193,13 @@ offset_left = -196.0
 offset_bottom = 64.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_mymv7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iwfre")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bc8na")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6ovwv")
+script = ExtResource("7_61uux")
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
+[connection signal="pressed" from="Shop/ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
+[connection signal="pressed" from="Shop/ShopPanel/UserShop" to="." method="_on_user_shop_pressed"]
+[connection signal="pressed" from="Shop/ShopPanel/Achievements" to="." method="_on_achievements_pressed"]
