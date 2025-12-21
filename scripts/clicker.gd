@@ -1,9 +1,11 @@
 extends Control
 @onready var among_us: Button = $AmongUs
-@onready var clicker_shop: Button = $ShopSystem/ShopPanel/Buttons/ClickerShop
-@onready var user_shop: Button = $ShopSystem/ShopPanel/Buttons/UserShop
-@onready var achievements: Button = $ShopSystem/ShopPanel/Buttons/Achievements
-
+@onready var shop_panel: Panel = $ShopSystem/ShopPanel
+@onready var clicker_shop: Button = $ShopSystem/ShopPanel/ClickerShop
+@onready var user_shop: Button = $ShopSystem/ShopPanel/UserShop
+@onready var achievements: Button = $ShopSystem/ShopPanel/Achievements
+func _ready() -> void:
+	pass
 
 signal among_pressed()
 func _on_among_us_button_down() -> void:

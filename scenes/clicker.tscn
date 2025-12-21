@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=35 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://b0rvi1i3ck4x3" path="res://scripts/user_shop.gd" id="6_grrbb"]
 [ext_resource type="Script" uid="uid://degaiwdg2jnid" path="res://scripts/achievements.gd" id="7_61uux"]
 [ext_resource type="FontFile" uid="uid://dwh2nitrs85pm" path="res://assets/fonts/In your face, joffrey!.ttf" id="8_61uux"]
+[ext_resource type="StyleBox" uid="uid://0kjx7pj0v6p7" path="res://assets/button_styles/easy_upgrade.tres" id="9_bc8na"]
+[ext_resource type="StyleBox" uid="uid://b7v422ok5kwm7" path="res://assets/button_styles/easy_hover.tres" id="10_alqnx"]
+[ext_resource type="StyleBox" uid="uid://bov7ou651nbmn" path="res://assets/button_styles/mid_upgrade.tres" id="10_qtuxs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -94,8 +97,17 @@ corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ovwv"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtuxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_alqnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwfre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swpa1"]
+
 [node name="Clicker" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -116,15 +128,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6ovwv")
 
 [node name="AmongUs" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.102000006
-anchor_top = 0.305
-anchor_right = 0.275
-anchor_bottom = 0.703
-offset_left = -0.8400116
-offset_top = -0.3999939
-offset_bottom = -0.23999023
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 202.0
+offset_top = -199.0
+offset_right = 522.0
+offset_bottom = 206.7732
 grow_vertical = 2
 pivot_offset = Vector2(166, 215)
 theme_override_styles/normal = SubResource("StyleBoxTexture_grrbb")
@@ -133,26 +143,25 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_grrbb")
 theme_override_styles/focus = SubResource("StyleBoxTexture_grrbb")
 
 [node name="CPS" type="Label" parent="."]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 843.0
-offset_right = 686.0
-offset_bottom = 943.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = -272.0
+offset_right = 721.0
+offset_bottom = -172.0
+grow_vertical = 0
 theme_override_fonts/font = SubResource("SystemFont_tph31")
 theme_override_font_sizes/font_size = 100
-text = "Amongs Per Second: 0"
+text = "Amongs Per Second: 0.0"
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.046000004
-anchor_top = 0.080000006
-anchor_right = 0.33400002
-anchor_bottom = 0.266
-offset_left = -0.32000732
-offset_top = 0.59999084
-offset_right = -0.2800293
-offset_bottom = -0.27999878
+offset_left = 126.0
+offset_top = 111.0
+offset_right = 679.0
+offset_bottom = 311.0
 theme_override_fonts/font = SubResource("SystemFont_tph31")
 theme_override_font_sizes/font_size = 200
 text = "Amongs: 0"
@@ -163,19 +172,25 @@ script = ExtResource("4_kmipb")
 [node name="ShopSystem" type="CanvasLayer" parent="."]
 
 [node name="ShopPanel" type="Panel" parent="ShopSystem"]
-offset_left = 820.0
-offset_top = 166.0
-offset_right = 1846.0
-offset_bottom = 918.0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1129.0
+offset_top = -376.0
+offset_right = -103.0
+offset_bottom = 376.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_kmipb")
 
-[node name="Buttons" type="Node" parent="ShopSystem/ShopPanel"]
-
-[node name="ClickerShop" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
-offset_left = 820.0
-offset_top = 166.0
-offset_right = 1164.0
-offset_bottom = 273.0
+[node name="ClickerShop" type="Button" parent="ShopSystem/ShopPanel"]
+layout_mode = 1
+offset_right = 344.0
+offset_bottom = 107.0
 theme_override_fonts/font = SubResource("SystemFont_grrbb")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_smtw7")
@@ -185,14 +200,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kmipb")
 text = "Clickers"
 script = ExtResource("5_smtw7")
 
-[node name="UserShop" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
+[node name="UserShop" type="Button" parent="ShopSystem/ShopPanel"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 202.0
-offset_top = 166.0
-offset_right = 544.0
-offset_bottom = 273.0
+offset_left = -171.0
+offset_right = 171.0
+offset_bottom = 107.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
 theme_override_fonts/font = SubResource("SystemFont_61uux")
@@ -204,14 +219,13 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_smtw7")
 text = "Amongs"
 script = ExtResource("6_grrbb")
 
-[node name="Achievements" type="Button" parent="ShopSystem/ShopPanel/Buttons"]
+[node name="Achievements" type="Button" parent="ShopSystem/ShopPanel"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -417.0
-offset_top = 166.0
-offset_right = -75.0
-offset_bottom = 273.0
+offset_left = -342.0
+offset_bottom = 107.0
 grow_horizontal = 0
 theme_override_fonts/font = SubResource("SystemFont_mymv7")
 theme_override_font_sizes/font_size = 90
@@ -229,10 +243,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -343.0
-offset_top = -229.0
-offset_right = 463.0
-offset_bottom = 341.0
+offset_left = -394.0
+offset_top = -227.0
+offset_right = 412.0
+offset_bottom = 343.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
@@ -246,8 +260,16 @@ theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("9_bc8na")
+theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtuxs")
 text = "Crewmate Hands (generates 0.1 per second)"
 
 [node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
@@ -261,10 +283,18 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("9_bc8na")
+theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_alqnx")
 text = "Tiny Impostor (Generates 1 per second)"
 
 [node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
@@ -278,10 +308,18 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("9_bc8na")
+theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_iwfre")
 text = " Broken Task Button (GENERATES 5 PER SECOND)"
 autowrap_mode = 2
 
@@ -296,10 +334,18 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("9_bc8na")
+theme_override_styles/pressed = ExtResource("10_alqnx")
+theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_swpa1")
 text = "Emergency Button (generates 15 per second)"
 autowrap_mode = 2
 
@@ -314,10 +360,11 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("10_qtuxs")
 text = "Auto task completer (generates 80 per second)"
 autowrap_mode = 2
 
@@ -332,10 +379,11 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("10_qtuxs")
 text = "Vent cLICKER (GENERATES 300 PER SECOND)"
 autowrap_mode = 2
 
@@ -350,10 +398,11 @@ layout_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
-custom_minimum_size = Vector2(596, 58)
+custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("10_qtuxs")
 text = "Security camera farm (generates 1,200 per second)"
 autowrap_mode = 2
 
@@ -365,6 +414,6 @@ text = "200,000 APS"
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/ClickerShop" to="." method="_on_clicker_shop_pressed"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/UserShop" to="." method="_on_user_shop_pressed"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/Buttons/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/UserShop" to="." method="_on_user_shop_pressed"]
+[connection signal="pressed" from="ShopSystem/ShopPanel/Achievements" to="." method="_on_achievements_pressed"]
