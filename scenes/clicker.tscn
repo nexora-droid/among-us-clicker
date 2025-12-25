@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=53 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -11,6 +11,12 @@
 [ext_resource type="StyleBox" uid="uid://0kjx7pj0v6p7" path="res://assets/button_styles/easy_upgrade.tres" id="9_bc8na"]
 [ext_resource type="StyleBox" uid="uid://b7v422ok5kwm7" path="res://assets/button_styles/easy_hover.tres" id="10_alqnx"]
 [ext_resource type="StyleBox" uid="uid://bov7ou651nbmn" path="res://assets/button_styles/mid_upgrade.tres" id="10_qtuxs"]
+[ext_resource type="StyleBox" uid="uid://cayb1oovv0m2v" path="res://assets/button_styles/disabled.tres" id="11_iwfre"]
+[ext_resource type="StyleBox" uid="uid://2ivmod2fpwqp" path="res://assets/button_styles/mid_hover.tres" id="12_alqnx"]
+[ext_resource type="Texture2D" uid="uid://doh33h7obchk8" path="res://images/previous.png" id="14_4iri7"]
+[ext_resource type="Texture2D" uid="uid://b2pw34w7r2y6e" path="res://images/next.png" id="15_acoyv"]
+[ext_resource type="Texture2D" uid="uid://bnurr0l12urv7" path="res://images/music.png" id="16_tqjdn"]
+[ext_resource type="Script" uid="uid://blwnkpls28rey" path="res://scripts/save_prompt.gd" id="17_acoyv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -105,6 +111,65 @@ corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swpa1"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qr02"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4iri7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acoyv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dalle"]
+texture = ExtResource("14_4iri7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8f71"]
+texture = ExtResource("15_acoyv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4iri7"]
+texture = ExtResource("16_tqjdn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_acoyv"]
+texture = ExtResource("16_tqjdn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqjdn"]
+texture = ExtResource("16_tqjdn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4xj4"]
+texture = ExtResource("16_tqjdn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqjdn"]
+bg_color = Color(1, 0.34212103, 0.28695118, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dalle"]
+bg_color = Color(4.042983e-06, 0.8879716, 0.62584686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8f71"]
+bg_color = Color(4.042983e-06, 0.8879716, 0.62584686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.003921569, 0.8862745, 0.627451, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Clicker" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -119,9 +184,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -719.0
-offset_right = 1044.5557
-offset_bottom = 992.0
+offset_left = -749.0
+offset_top = -1.0
+offset_right = 1014.55566
+offset_bottom = 991.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_6ovwv")
@@ -131,10 +197,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 202.0
-offset_top = -199.0
-offset_right = 522.0
-offset_bottom = 206.7732
+offset_left = 199.0
+offset_top = -126.0
+offset_right = 519.0
+offset_bottom = 279.7732
 grow_vertical = 2
 pivot_offset = Vector2(166, 215)
 theme_override_styles/normal = SubResource("StyleBoxTexture_grrbb")
@@ -147,31 +213,45 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 81.0
-offset_top = -272.0
-offset_right = 721.0
-offset_bottom = -172.0
+offset_left = 78.0
+offset_top = -199.0
+offset_right = 718.0
+offset_bottom = -99.0
 grow_vertical = 0
 theme_override_fonts/font = SubResource("SystemFont_tph31")
 theme_override_font_sizes/font_size = 100
 text = "Amongs Per Second: 0.0"
 
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -970.0
+offset_right = 692.0
+offset_bottom = -870.0
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_tph31")
+theme_override_font_sizes/font_size = 100
+text = "AMONGS"
+horizontal_alignment = 1
+
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
-offset_left = 126.0
-offset_top = 111.0
-offset_right = 679.0
-offset_bottom = 311.0
+offset_left = 91.0
+offset_top = 214.0
+offset_right = 644.0
+offset_bottom = 414.0
 theme_override_fonts/font = SubResource("SystemFont_tph31")
 theme_override_font_sizes/font_size = 200
-text = "Amongs: 0"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_kmipb")
 
-[node name="ShopSystem" type="CanvasLayer" parent="."]
-
-[node name="ShopPanel" type="Panel" parent="ShopSystem"]
+[node name="ShopPanel" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -180,14 +260,14 @@ anchor_bottom = 0.5
 offset_left = -1129.0
 offset_top = -376.0
 offset_right = -103.0
-offset_bottom = 376.0
+offset_bottom = 423.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_kmipb")
 
-[node name="ClickerShop" type="Button" parent="ShopSystem/ShopPanel"]
+[node name="ClickerShop" type="Button" parent="ShopPanel"]
 layout_mode = 1
 offset_right = 344.0
 offset_bottom = 107.0
@@ -200,7 +280,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_kmipb")
 text = "Clickers"
 script = ExtResource("5_smtw7")
 
-[node name="UserShop" type="Button" parent="ShopSystem/ShopPanel"]
+[node name="UserShop" type="Button" parent="ShopPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -219,7 +299,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_smtw7")
 text = "Amongs"
 script = ExtResource("6_grrbb")
 
-[node name="Achievements" type="Button" parent="ShopSystem/ShopPanel"]
+[node name="Achievements" type="Button" parent="ShopPanel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -236,184 +316,401 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6ovwv")
 text = "BADGES"
 script = ExtResource("7_61uux")
 
-[node name="ClickersUpgrades" type="ScrollContainer" parent="ShopSystem/ShopPanel"]
+[node name="ClickersUpgrades" type="ScrollContainer" parent="ShopPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -394.0
-offset_top = -227.0
-offset_right = 412.0
-offset_bottom = 343.0
+offset_left = -393.0
+offset_top = -199.5
+offset_right = 413.0
+offset_bottom = 370.5
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/ClickersUpgrades"]
 layout_mode = 2
 
-[node name="Upgrade1" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade1" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
+[node name="U1_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
+custom_minimum_size = Vector2(608, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("9_bc8na")
 theme_override_styles/pressed = ExtResource("9_bc8na")
 theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qtuxs")
-text = "Crewmate Hands (generates 0.1 per second)"
+text = "Crewmate Hands (0.1 APS)"
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
+[node name="U1_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "15 aps"
+text = "15"
 
-[node name="Upgrade2" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade2" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
+[node name="U2_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("9_bc8na")
 theme_override_styles/pressed = ExtResource("9_bc8na")
 theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_alqnx")
-text = "Tiny Impostor (Generates 1 per second)"
+text = "Tiny Impostor (1 APS)"
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
+[node name="U2_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "100 APS"
+text = "100"
 
-[node name="Upgrade3" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade3" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
+[node name="U3_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("9_bc8na")
 theme_override_styles/pressed = ExtResource("9_bc8na")
 theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iwfre")
-text = " Broken Task Button (GENERATES 5 PER SECOND)"
+text = " Broken Task Button (5 APS)"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
+[node name="U3_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "500 APS"
+text = "500"
 
-[node name="Upgrade4" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade4" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
+[node name="U4_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("9_bc8na")
 theme_override_styles/pressed = ExtResource("10_alqnx")
 theme_override_styles/hover = ExtResource("10_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_swpa1")
-text = "Emergency Button (generates 15 per second)"
+text = "Emergency Button (15 APS)"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
+[node name="U4_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "2000 aps"
+text = "2000"
 
-[node name="Upgrade5" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade5" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
+[node name="U5_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("10_qtuxs")
-text = "Auto task completer (generates 80 per second)"
+theme_override_styles/pressed = ExtResource("12_alqnx")
+theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3qr02")
+text = "Auto task completer (80 APS)"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
+[node name="U5_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "10,000 APS"
+text = "10,000"
 
-[node name="Upgrade6" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade6" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
+[node name="U6_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("10_qtuxs")
-text = "Vent cLICKER (GENERATES 300 PER SECOND)"
+theme_override_styles/pressed = ExtResource("12_alqnx")
+theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4iri7")
+text = "Vent cLICKER (300 APS)"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
+[node name="U6_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "50,000 APS"
+text = "50,000"
 
-[node name="Upgrade7" type="HBoxContainer" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer"]
+[node name="Upgrade7" type="HBoxContainer" parent="ShopPanel/ClickersUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Button" type="Button" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
+[node name="U7_Button" type="Button" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
 custom_minimum_size = Vector2(608, 58)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("10_qtuxs")
-text = "Security camera farm (generates 1,200 per second)"
+theme_override_styles/pressed = ExtResource("12_alqnx")
+theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_acoyv")
+text = "Security camera farm (1,200 aps)"
 autowrap_mode = 2
 
-[node name="Label" type="Label" parent="ShopSystem/ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
+[node name="U7_Label" type="Label" parent="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-text = "200,000 APS"
+text = "200,000"
+
+[node name="ItemLabel" type="Label" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 113.0
+offset_right = -73.0
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 80
+text = "Item"
+
+[node name="CostLabel" type="Label" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 215.0
+offset_top = 118.0
+offset_right = 303.0
+offset_bottom = 198.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 80
+text = "COST"
+
+[node name="ShopSystem" type="CanvasLayer" parent="."]
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -367.0
+offset_top = -1048.0
+offset_right = -262.0
+offset_bottom = -940.5581
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dalle")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dalle")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dalle")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dalle")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dalle")
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -119.0
+offset_top = -1048.0
+offset_right = -14.0
+offset_bottom = -940.558
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_w8f71")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w8f71")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w8f71")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_w8f71")
+theme_override_styles/focus = SubResource("StyleBoxTexture_w8f71")
+
+[node name="Play_Pause" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 11.0
+offset_right = -127.0
+offset_bottom = 160.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4iri7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_acoyv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tqjdn")
+theme_override_styles/focus = SubResource("StyleBoxTexture_c4xj4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="OverlayPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveMenu" type="CanvasLayer" parent="."]
+script = ExtResource("17_acoyv")
+
+[node name="Panel" type="Panel" parent="SaveMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -106.0
+offset_right = 269.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tqjdn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="SaveMenu/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -236.0
+offset_top = 34.0
+offset_right = 220.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 40
+text = "Do you want to start new or continue from the last save?"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" type="Button" parent="SaveMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.59659094
+anchor_top = 0.5948276
+anchor_right = 0.8333333
+anchor_bottom = 0.83189654
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dalle")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dalle")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8f71")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dalle")
+text = "Continue"
+metadata/_edit_use_anchors_ = true
+
+[node name="New" type="Button" parent="SaveMenu/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14204545
+anchor_top = 0.5991379
+anchor_right = 0.37878788
+anchor_bottom = 0.8362069
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_dalle")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dalle")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8f71")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dalle")
+text = "NEW"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/UserShop" to="." method="_on_user_shop_pressed"]
-[connection signal="pressed" from="ShopSystem/ShopPanel/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
+[connection signal="pressed" from="ShopPanel/UserShop" to="." method="_on_user_shop_pressed"]
+[connection signal="pressed" from="ShopPanel/Achievements" to="." method="_on_achievements_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1/U1_Button" to="Score" method="_on_u_1_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2/U2_Button" to="Score" method="_on_u_2_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade3/U3_Button" to="Score" method="_on_u_3_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade4/U4_Button" to="Score" method="_on_u_4_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5/U5_Button" to="Score" method="_on_u_5_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6/U6_Button" to="Score" method="_on_u_6_button_pressed"]
+[connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7/U7_Button" to="Score" method="_on_u_7_button_pressed"]
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Play_Pause" to="." method="_on_play_pause_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="SaveMenu/Panel/Continue" to="SaveMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="SaveMenu/Panel/New" to="SaveMenu" method="_on_new_pressed"]

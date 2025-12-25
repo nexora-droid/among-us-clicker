@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dytwfdd1naaf2"]
+[gd_scene load_steps=15 format=3 uid="uid://dytwfdd1naaf2"]
 
 [ext_resource type="Script" uid="uid://s5vym2gejkbl" path="res://scripts/menu.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://dkfbwv6h6rcxh" path="res://images/amongus.svg" id="1_vjb58"]
 [ext_resource type="FontFile" uid="uid://dwh2nitrs85pm" path="res://assets/fonts/In your face, joffrey!.ttf" id="4_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="4_mhnvy"]
+[ext_resource type="AudioStream" uid="uid://221atvaptn40" path="res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3" id="5_4ytvr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ytvr"]
 texture = ExtResource("4_mhnvy")
@@ -163,5 +164,9 @@ theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mhnvy")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_mhnvy")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mhnvy")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mhnvy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_4ytvr")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
