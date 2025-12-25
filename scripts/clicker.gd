@@ -7,6 +7,16 @@ extends Control
 @onready var achievements: Button = $ShopPanel/Achievements
 @onready var panel: Panel = $SaveMenu/Panel
 @onready var save: CanvasLayer = $SaveMenu
+
+# Shops
+
+# Clicker Shops
+@onready var clickers_upgrades: ScrollContainer = $ShopPanel/ClickersUpgrades
+@onready var item_label: Label = $ShopPanel/ItemLabel
+@onready var cost_label: Label = $ShopPanel/CostLabel
+
+
+
 var playlist : Array = [load("res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3"), load("res://assets/audio/Matt Pridgyn - Second Wind [NCS Release].mp3"), load("res://assets/audio/Irokz - Goodbye My Love [NCS Release].mp3") , load("res://assets/audio/noaa! - HYPNOTIZED! [NCS Release].mp3"), load	("res://assets/audio/Spektrem - Stutterfly [NCS Release].mp3")]
 var current_track := 0
 var is_playing := false
@@ -30,14 +40,22 @@ func _on_user_shop_pressed() -> void:
 	user_shop.toggle_mode = true
 	user_shop.button_pressed = true
 	clicker_shop.toggle_mode = false
-	achievements	.toggle_mode = false
-
+	achievements.toggle_mode = false
+	
+	clickers_upgrades.hide()
+	item_label.hide()
+	cost_label.hide()
+	
 
 func _on_clicker_shop_pressed() -> void:
 	clicker_shop.toggle_mode = true
 	clicker_shop.button_pressed = true
 	achievements.toggle_mode = false
 	user_shop.toggle_mode = false
+	
+	clickers_upgrades.show()
+	item_label.show()
+	cost_label.show()
 
 
 func _on_achievements_pressed() -> void:
@@ -45,6 +63,10 @@ func _on_achievements_pressed() -> void:
 	achievements.button_pressed = true
 	user_shop.toggle_mode = false
 	clicker_shop.toggle_mode = false
+	
+	clickers_upgrades.hide()
+	item_label.hide()
+	cost_label.hide()
 
 func _play_track(index: int) -> void:
 	if (index < 0) or index >= playlist.size():
