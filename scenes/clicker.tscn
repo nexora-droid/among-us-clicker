@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=54 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -116,6 +116,17 @@ corner_radius_top_right = 40
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4iri7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acoyv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acoyv"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1444965, 0.34771603, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dalle"]
 texture = ExtResource("14_4iri7")
@@ -315,6 +326,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bc8na")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6ovwv")
 text = "BADGES"
 script = ExtResource("7_61uux")
+
+[node name="===Clciker Shop===" type="Node" parent="ShopPanel"]
 
 [node name="ClickersUpgrades" type="ScrollContainer" parent="ShopPanel"]
 layout_mode = 1
@@ -555,6 +568,48 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 80
 text = "COST"
+
+[node name="===User Shop===" type="Node" parent="ShopPanel"]
+
+[node name="UserUpgrades" type="ScrollContainer" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.0
+offset_top = -199.5
+offset_right = 413.0
+offset_bottom = 320.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/UserUpgrades"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_acoyv")
+text = "Blue Among US "
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "100"
 
 [node name="ShopSystem" type="CanvasLayer" parent="."]
 
