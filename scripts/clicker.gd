@@ -7,6 +7,8 @@ extends Control
 @onready var achievements: Button = $ShopPanel/Achievements
 @onready var panel: Panel = $SaveMenu/Panel
 @onready var save: CanvasLayer = $SaveMenu
+var current := "red"
+
 
 # Shops
 
@@ -17,6 +19,15 @@ extends Control
 
 # User Shop
 @onready var user_upgrades: ScrollContainer = $ShopPanel/UserUpgrades
+@onready var blue: Button = $ShopPanel/UserUpgrades/VBoxContainer/User1/Blue
+signal blue_bought()
+@onready var orange: Button = $ShopPanel/UserUpgrades/VBoxContainer/User2/Orange
+signal orange_bought()
+@onready var yellow: Button = $ShopPanel/UserUpgrades/VBoxContainer/User3/Yellow
+signal yellow_bought()
+@onready var purple: Button = $ShopPanel/UserUpgrades/VBoxContainer/User4/Purple
+signal purple_bought()
+@onready var red: Button = $ShopPanel/UserUpgrades/VBoxContainer/User0/Red
 
 
 var playlist : Array = [load("res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3"), load("res://assets/audio/Matt Pridgyn - Second Wind [NCS Release].mp3"), load("res://assets/audio/Irokz - Goodbye My Love [NCS Release].mp3") , load("res://assets/audio/noaa! - HYPNOTIZED! [NCS Release].mp3"), load	("res://assets/audio/Spektrem - Stutterfly [NCS Release].mp3")]
@@ -26,6 +37,9 @@ var is_playing := false
 func _ready() -> void:
 	_play_track(0)
 	user_upgrades.hide()
+	blue.remove_from_group("colour_bought")
+	orange.remove_from_group("colour_bought")
+	yellow.remove_from_group("colour_bought")
 	# achievement upgrades to be hidden.
 
 signal among_pressed()
@@ -112,3 +126,71 @@ func _on_play_pause_pressed() -> void:
 
 func _on_audio_stream_player_finished() -> void:
 	_on_next_pressed()
+
+
+func _on_blue_pressed() -> void:
+	if blue.is_in_group("colour_bought"):
+		return
+	if not blue.is_in_group("colour_bought"):
+		blue.add_to_group("colour_bought")
+	if current != "blue":
+		current = "blue"
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/blue_amongus.tres") )
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/blue_amongus.tres") )
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/blue_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/blue_amongus.tres"))
+	emit_signal("blue_bought")
+
+
+func _on_orange_pressed() -> void:
+	if orange.is_in_group("colour_bought"):
+		return
+	if not orange.is_in_group("colour_bought"):
+		orange.add_to_group("colour_bought")
+	if current != "orange":
+		current = "orange"
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/orange_amongus.tres"))
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/orange_amongus.tres"))
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/orange_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/orange_amongus.tres"))
+	emit_signal("orange_bought")
+
+
+func _on_yellow_pressed() -> void:
+	if yellow.is_in_group("colour_bought"):
+		return
+	if not yellow.is_in_group("colour_bought"):
+		yellow.add_to_group("colour_bought")
+	if current != "yellow":
+		current = "yellow"
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/yellow_amongus.tres"))
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/yellow_amongus.tres"))
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/yellow_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/yellow_amongus.tres"))
+	emit_signal("yellow_bought")
+
+func _on_purple_pressed() -> void:
+	if purple.is_in_group("colour_bought"):
+		return
+	if not purple.is_in_group("colour_bought"):
+		purple.add_to_group("colour_bought")
+	if current != "purple":
+		current = "purple"
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/purple_amongus.tres"))
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/purple_amongus.tres"))
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/purple_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/purple_amongus.tres"))
+	emit_signal("purple_bought")
+
+
+func _on_red_pressed() -> void:
+	if red.is_in_group("colour_bought"):
+		return
+	if not red.is_in_group("colour_bought"):
+		red.add_to_group("colour_bought")
+	if current != "purple":
+		current = "purple"
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/red_amongus.tres"))
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/red_amongus.tres"))
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/red_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/red_amongus.tres"))

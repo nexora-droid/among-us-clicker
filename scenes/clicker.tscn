@@ -1,8 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=72 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
-[ext_resource type="Texture2D" uid="uid://bfuj05a8ryv2o" path="res://images/8e5ee3be-fddb-4b85-b9e1-9ff2e379a377.png" id="3_smtw7"]
+[ext_resource type="StyleBox" uid="uid://duqnffmoubc7m" path="res://assets/button_styles/red_amongus.tres" id="4_dalle"]
 [ext_resource type="Script" uid="uid://b7gbn4i5by3gw" path="res://scripts/label.gd" id="4_kmipb"]
 [ext_resource type="Script" uid="uid://b4efh0vdo04km" path="res://scripts/clicker_shop.gd" id="5_smtw7"]
 [ext_resource type="Script" uid="uid://b0rvi1i3ck4x3" path="res://scripts/user_shop.gd" id="6_grrbb"]
@@ -20,9 +20,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_grrbb"]
-texture = ExtResource("3_smtw7")
 
 [sub_resource type="SystemFont" id="SystemFont_tph31"]
 font_names = PackedStringArray("In your face, Joffrey! ")
@@ -117,12 +114,221 @@ corner_radius_top_right = 40
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acoyv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjvvu"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.8228386, 0, 0.19829324, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p63wc"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9916771, 0.0005208229, 0.24887243, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1usv"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9916771, 0.0005208229, 0.24887243, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmyse"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9916771, 0.0005208229, 0.24887243, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acoyv"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 bg_color = Color(0.1444965, 0.34771603, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4xj4"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1444965, 0.34771603, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu0l3"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1444965, 0.34771603, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sb2o5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.1444965, 0.34771603, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpi78"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.86915267, 0.4293741, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f6n6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.5075661, 0.09173911, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctdqy"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.5075661, 0.09173911, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaknn"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 0.5075661, 0.09173911, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ghw01"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9230795, 0.7924312, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ip62"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9885203, 0.8502364, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfkpw"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9885203, 0.8502364, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfxnk"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9885203, 0.8502364, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73bn3"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.43483692, 0.0024504329, 0.84442985, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8j4d"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.5075899, 0.0062937695, 0.9754872, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5oex"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.5075899, 0.0062937695, 0.9754872, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tb04i"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.5075899, 0.0062937695, 0.9754872, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -214,10 +420,10 @@ offset_right = 519.0
 offset_bottom = 279.7732
 grow_vertical = 2
 pivot_offset = Vector2(166, 215)
-theme_override_styles/normal = SubResource("StyleBoxTexture_grrbb")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_grrbb")
-theme_override_styles/hover = SubResource("StyleBoxTexture_grrbb")
-theme_override_styles/focus = SubResource("StyleBoxTexture_grrbb")
+theme_override_styles/normal = ExtResource("4_dalle")
+theme_override_styles/pressed = ExtResource("4_dalle")
+theme_override_styles/hover = ExtResource("4_dalle")
+theme_override_styles/focus = ExtResource("4_dalle")
 
 [node name="CPS" type="Label" parent="."]
 layout_mode = 1
@@ -330,6 +536,7 @@ script = ExtResource("7_61uux")
 [node name="===Clciker Shop===" type="Node" parent="ShopPanel"]
 
 [node name="ClickersUpgrades" type="ScrollContainer" parent="ShopPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -588,11 +795,37 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/UserUpgrades"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+[node name="User0" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/HBoxContainer"]
+[node name="Red" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User0"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjvvu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p63wc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m1usv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tmyse")
+text = "Reset colour to default"
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "Free"
+
+[node name="User1" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Blue" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User1"]
 custom_minimum_size = Vector2(608, 70)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
@@ -602,9 +835,90 @@ theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_acoyv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c4xj4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pu0l3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_sb2o5")
 text = "Blue Among US "
 
-[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "100"
+
+[node name="User2" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Orange" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User2"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_fpi78")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0f6n6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctdqy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_kaknn")
+text = "Orange Among US "
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "100"
+
+[node name="User3" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Yellow" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User3"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ghw01")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4ip62")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rfkpw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gfxnk")
+text = "Yellow Among US "
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "100"
+
+[node name="User4" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Purple" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User4"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_73bn3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i8j4d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m5oex")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tb04i")
+text = "purple Among US "
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
@@ -765,6 +1079,11 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade5/U5_Button" to="Score" method="_on_u_5_button_pressed"]
 [connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade6/U6_Button" to="Score" method="_on_u_6_button_pressed"]
 [connection signal="pressed" from="ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade7/U7_Button" to="Score" method="_on_u_7_button_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User0/Red" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User1/Blue" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User2/Orange" to="." method="_on_orange_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User3/Yellow" to="." method="_on_yellow_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User4/Purple" to="." method="_on_purple_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Play_Pause" to="." method="_on_play_pause_pressed"]

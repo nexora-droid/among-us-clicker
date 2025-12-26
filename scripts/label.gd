@@ -17,6 +17,11 @@ var aps: float = 0.0
 
 func _ready() -> void:
 	clicker.connect("among_pressed", Callable(self, "_on_among_pressed"))
+	clicker.connect("blue_bought", Callable(self, "_on_blue_bought"))
+	clicker.connect("orange_bought", Callable(self, "_on_orange_bought"))
+	clicker.connect("yellow_bought", Callable(self, "_on_yellow_bought"))
+	clicker.connect("purple_bought", Callable(self, "_on_purple_bought"))
+	
 	upgrades = [
 		$"../ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1/U1_Button", 
 		$"../ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade2/U2_Button", 
@@ -245,3 +250,12 @@ func _load_system() -> void:
 				upgrades[i].disabled = false
 	elif typeof(data) != TYPE_DICTIONARY:
 		print("Error")
+		
+func _on_blue_bought() -> void:
+	score -= 100
+func _on_yellow_bought() -> void:
+	score -= 100
+func _on_orange_bought() -> void:
+	score -= 100
+func _on_purple_bought() -> void:
+	score -= 100
