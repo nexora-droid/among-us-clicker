@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ckdro836gyb85"
+path="res://.godot/imported/player_1hr.dialogue-78f4c2e07269b6a1bf1b63e6881b6850.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/player_1hr.dialogue"
+dest_files=["res://.godot/imported/player_1hr.dialogue-78f4c2e07269b6a1bf1b63e6881b6850.tres"]
+
+[params]
+
+defaults=true

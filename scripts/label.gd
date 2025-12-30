@@ -4,7 +4,21 @@ extends Label
 @onready var cps: Label = $"../CPS"
 @onready var save: CanvasLayer = $"../SaveMenu"
 @onready var panel: Panel = $"../OverlayPanel"
-
+@onready var claim_1: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel/Claim1"
+@onready var claim_2: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel/Claim2"
+@onready var claim_prompt: Label = $"../ShopPanel/Badges/VBoxContainer/BadgePanel/ClaimPrompt"
+@onready var claim_2_b_2: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel2/Claim2_B2"
+@onready var claim_prompt_b_2: Label = $"../ShopPanel/Badges/VBoxContainer/BadgePanel2/ClaimPrompt_B2"
+@onready var claim_1_b_2: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel2/Claim1_B2"
+@onready var claim_1_b_4: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel4/Claim1_B4"
+@onready var claim_2_b_4: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel4/Claim2_B4"
+@onready var claim_prompt_b_4: Label = $"../ShopPanel/Badges/VBoxContainer/BadgePanel4/ClaimPrompt_B4"
+@onready var claim_1_b_5: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel5/Claim1_B5"
+@onready var claim_2_b_5: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel5/Claim2_B5"
+@onready var claim_prompt_b_5: Label = $"../ShopPanel/Badges/VBoxContainer/BadgePanel5/ClaimPrompt_B5"
+@onready var claim_2_b_3: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel3/Claim2_B3"
+@onready var claim_prompt_b_3: Label = $"../ShopPanel/Badges/VBoxContainer/BadgePanel3/ClaimPrompt_B3"
+@onready var claim_1_b_3: Panel = $"../ShopPanel/Badges/VBoxContainer/BadgePanel3/Claim1_B3"
 
 var upgrades: Array
 var upgrade_labels: Array
@@ -15,12 +29,24 @@ var clicks_this_second: float = 0.0
 var time_passed: float = 0.0
 var aps: float = 0.0
 
+signal score_100()
+signal score_500()
+signal score_420()
+signal score_69()
+signal score_1000()
+var emitted_100 := false
+var emitted_500 := false
+var emitted_420 := false
+var emitted_69  := false
+var emitted_1000:= false
+
 func _ready() -> void:
 	clicker.connect("among_pressed", Callable(self, "_on_among_pressed"))
 	clicker.connect("blue_bought", Callable(self, "_on_blue_bought"))
 	clicker.connect("orange_bought", Callable(self, "_on_orange_bought"))
 	clicker.connect("yellow_bought", Callable(self, "_on_yellow_bought"))
 	clicker.connect("purple_bought", Callable(self, "_on_purple_bought"))
+	clicker.connect("cyan_bought", Callable(self, "_on_cyan_bought"))
 	
 	upgrades = [
 		$"../ShopPanel/ClickersUpgrades/VBoxContainer/Upgrade1/U1_Button", 
@@ -95,6 +121,21 @@ func _process(delta: float) -> void:
 			if score >= cost:
 				upgrades[i].add_to_group("is_unlocked")
 				upgrades[i].disabled = false
+	if score >= 100 and not emitted_100:
+		emit_signal("score_100")
+		emitted_100 = true
+	if score >= 500 and not emitted_500:
+		emit_signal("score_500")
+		emitted_500 = true
+	if score >= 420 and not emitted_420:
+		emit_signal("score_420")
+		emitted_420 = true
+	if score >= 69 and not emitted_69:
+		emit_signal("score_69")
+		emitted_69 = true
+	if score == 1000 and not emitted_1000:
+		emit_signal("score_1000")
+		emitted_1000 = true
 	_shop_control()
 
 func _shop_control() -> void:
@@ -250,12 +291,66 @@ func _load_system() -> void:
 				upgrades[i].disabled = false
 	elif typeof(data) != TYPE_DICTIONARY:
 		print("Error")
-		
+
+# hey reviewer ik i could have just used one signal for all these but i realised after and im too 
+# lazy to fix it so uh yeah
 func _on_blue_bought() -> void:
 	score -= 100
+	text = String.num(float(score), 1)
 func _on_yellow_bought() -> void:
 	score -= 100
+	text = String.num(float(score), 1)
 func _on_orange_bought() -> void:
 	score -= 100
+	text = String.num(float(score), 1)
 func _on_purple_bought() -> void:
 	score -= 100
+	text = String.num(float(score), 1)
+func _on_cyan_bought() -> void:
+	score -= 100
+	text = String.num(float(score), 1)
+
+signal badge1_claimed()
+func _on_badge_panel_pressed() -> void:
+	score += 25
+	text = String.num(float(score), 1)
+	claim_1.hide()
+	claim_2.hide()
+	claim_prompt.hide()
+	emit_signal("badge1_claimed")
+
+signal badge2_claimed()
+func _on_badge_panel_2_pressed() -> void:
+	score += 50
+	text = String.num(float(score), 1)
+	claim_1_b_2.hide()
+	claim_2_b_2.hide()
+	claim_prompt_b_2.hide()
+	emit_signal("badge2_claimed")
+
+signal badge4_claimed()
+func _on_badge_panel_4_pressed() -> void:
+	score += 42
+	text = String.num(float(score), 1)
+	claim_1_b_4.hide()
+	claim_2_b_4.hide()
+	claim_prompt_b_4.hide()
+	emit_signal("badge4_claimed")
+
+signal badge5_claimed()
+func _on_badge_panel_5_pressed() -> void:
+	score += 69
+	text = String.num(float(score), 1)
+	claim_1_b_5.hide()
+	claim_2_b_5.hide()
+	claim_prompt_b_5.hide()
+	emit_signal("badge5_claimed")
+
+signal badge3_claimed()
+func _on_badge_panel_3_pressed() -> void:
+	score += 500
+	text = String.num(float(score), 1)
+	claim_1_b_3.hide()
+	claim_2_b_3.hide()
+	claim_prompt_b_3.hide()
+	emit_signal("badge3_claimed")

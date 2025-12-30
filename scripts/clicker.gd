@@ -1,4 +1,5 @@
 extends Control
+
 @onready var among_us: Button = $AmongUs
 @onready var shop_panel: Panel = $ShopPanel
 @onready var clicker_shop: Button = $ShopPanel/ClickerShop
@@ -7,6 +8,8 @@ extends Control
 @onready var achievements: Button = $ShopPanel/Achievements
 @onready var panel: Panel = $SaveMenu/Panel
 @onready var save: CanvasLayer = $SaveMenu
+@onready var score: Label = $Score
+@onready var badges_panel: ScrollContainer = $ShopPanel/Badges
 var current := "red"
 
 
@@ -27,7 +30,14 @@ signal orange_bought()
 signal yellow_bought()
 @onready var purple: Button = $ShopPanel/UserUpgrades/VBoxContainer/User4/Purple
 signal purple_bought()
+@onready var cyan: Button = $ShopPanel/UserUpgrades/VBoxContainer/User5/Cyan
+signal cyan_bought()
 @onready var red: Button = $ShopPanel/UserUpgrades/VBoxContainer/User0/Red
+@onready var user_item_label: Label = $ShopPanel/UserItemLabel
+@onready var user_cost_label: Label = $ShopPanel/UserCostLabel
+
+# Badges
+@onready var badges: ScrollContainer = $ShopPanel/Badges
 
 
 var playlist : Array = [load("res://assets/audio/Lost Sky, Shiah Maisel - Lost pt. II [NCS Release].mp3"), load("res://assets/audio/Matt Pridgyn - Second Wind [NCS Release].mp3"), load("res://assets/audio/Irokz - Goodbye My Love [NCS Release].mp3") , load("res://assets/audio/noaa! - HYPNOTIZED! [NCS Release].mp3"), load	("res://assets/audio/Spektrem - Stutterfly [NCS Release].mp3")]
@@ -37,9 +47,7 @@ var is_playing := false
 func _ready() -> void:
 	_play_track(0)
 	user_upgrades.hide()
-	blue.remove_from_group("colour_bought")
-	orange.remove_from_group("colour_bought")
-	yellow.remove_from_group("colour_bought")
+	badges_panel.hide()
 	# achievement upgrades to be hidden.
 
 signal among_pressed()
@@ -63,10 +71,13 @@ func _on_user_shop_pressed() -> void:
 	clickers_upgrades.hide()
 	item_label.hide()
 	cost_label.hide()
-	
-	user_upgrades.show()
-	
 
+	user_upgrades.show()
+	user_item_label.show()
+	user_cost_label.show()
+	
+	badges.hide()
+	
 func _on_clicker_shop_pressed() -> void:
 	clicker_shop.toggle_mode = true
 	clicker_shop.button_pressed = true
@@ -78,7 +89,10 @@ func _on_clicker_shop_pressed() -> void:
 	cost_label.show()
 	
 	user_upgrades.hide()
-
+	user_item_label.hide()
+	user_cost_label.hide()
+	
+	badges.hide()
 
 func _on_achievements_pressed() -> void:
 	achievements.toggle_mode = true
@@ -91,6 +105,10 @@ func _on_achievements_pressed() -> void:
 	cost_label.hide()
 	
 	user_upgrades.hide()
+	user_item_label.hide()
+	user_cost_label.hide()
+	
+	badges.show()
 
 func _play_track(index: int) -> void:
 	if (index < 0) or index >= playlist.size():
@@ -129,68 +147,68 @@ func _on_audio_stream_player_finished() -> void:
 
 
 func _on_blue_pressed() -> void:
-	if blue.is_in_group("colour_bought"):
+	if current == "blue"  or (int(score.text) - 100) < 0:
 		return
-	if not blue.is_in_group("colour_bought"):
-		blue.add_to_group("colour_bought")
 	if current != "blue":
 		current = "blue"
+	emit_signal("blue_bought")
 	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/blue_amongus.tres") )
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/blue_amongus.tres") )
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/blue_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/blue_amongus.tres"))
-	emit_signal("blue_bought")
 
 
 func _on_orange_pressed() -> void:
-	if orange.is_in_group("colour_bought"):
+	if current == "orange" or (int(score.text) - 100) < 0:
 		return
-	if not orange.is_in_group("colour_bought"):
-		orange.add_to_group("colour_bought")
 	if current != "orange":
 		current = "orange"
+	emit_signal("orange_bought")
 	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/orange_amongus.tres"))
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/orange_amongus.tres"))
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/orange_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/orange_amongus.tres"))
-	emit_signal("orange_bought")
 
 
 func _on_yellow_pressed() -> void:
-	if yellow.is_in_group("colour_bought"):
+	if current == "yellow" or (int(score.text) - 100) < 0:
 		return
-	if not yellow.is_in_group("colour_bought"):
-		yellow.add_to_group("colour_bought")
 	if current != "yellow":
 		current = "yellow"
+	emit_signal("yellow_bought")
 	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/yellow_amongus.tres"))
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/yellow_amongus.tres"))
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/yellow_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/yellow_amongus.tres"))
-	emit_signal("yellow_bought")
 
 func _on_purple_pressed() -> void:
-	if purple.is_in_group("colour_bought"):
+	if current == "purple"  or (int(score.text) - 100) < 0:
 		return
-	if not purple.is_in_group("colour_bought"):
-		purple.add_to_group("colour_bought")
 	if current != "purple":
 		current = "purple"
+	emit_signal("purple_bought")
 	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/purple_amongus.tres"))
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/purple_amongus.tres"))
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/purple_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/purple_amongus.tres"))
-	emit_signal("purple_bought")
 
 
 func _on_red_pressed() -> void:
-	if red.is_in_group("colour_bought"):
-		return
-	if not red.is_in_group("colour_bought"):
-		red.add_to_group("colour_bought")
-	if current != "purple":
-		current = "purple"
+	if current != "red":
+		current = "red"
 	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/red_amongus.tres"))
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/red_amongus.tres"))
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/red_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/red_amongus.tres"))
+
+
+func _on_cyan_pressed() -> void:
+	if (int(score.text) - 100) < 0 or current == "cyan":
+		return
+	if current != "cyan":
+		current = "cyan"
+	emit_signal("cyan_bought")
+	among_us.add_theme_stylebox_override("normal", load("res://assets/button_styles/cyan_amongus.tres"))
+	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/cyan_amongus.tres"))
+	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/cyan_amongus.tres"))
+	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/cyan_amongus.tres"))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=91 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -8,15 +8,26 @@
 [ext_resource type="Script" uid="uid://b0rvi1i3ck4x3" path="res://scripts/user_shop.gd" id="6_grrbb"]
 [ext_resource type="Script" uid="uid://degaiwdg2jnid" path="res://scripts/achievements.gd" id="7_61uux"]
 [ext_resource type="FontFile" uid="uid://dwh2nitrs85pm" path="res://assets/fonts/In your face, joffrey!.ttf" id="8_61uux"]
-[ext_resource type="StyleBox" uid="uid://0kjx7pj0v6p7" path="res://assets/button_styles/easy_upgrade.tres" id="9_bc8na"]
+[ext_resource type="StyleBox" uid="uid://407l1tx1tgdo" path="res://assets/button_styles/easy_badge.tres" id="9_w8f71"]
 [ext_resource type="StyleBox" uid="uid://b7v422ok5kwm7" path="res://assets/button_styles/easy_hover.tres" id="10_alqnx"]
-[ext_resource type="StyleBox" uid="uid://bov7ou651nbmn" path="res://assets/button_styles/mid_upgrade.tres" id="10_qtuxs"]
 [ext_resource type="StyleBox" uid="uid://cayb1oovv0m2v" path="res://assets/button_styles/disabled.tres" id="11_iwfre"]
 [ext_resource type="StyleBox" uid="uid://2ivmod2fpwqp" path="res://assets/button_styles/mid_hover.tres" id="12_alqnx"]
+[ext_resource type="StyleBox" uid="uid://bjboyb2l6mpx6" path="res://assets/button_styles/mid_badge.tres" id="12_sb2o5"]
 [ext_resource type="Texture2D" uid="uid://doh33h7obchk8" path="res://images/previous.png" id="14_4iri7"]
+[ext_resource type="StyleBox" uid="uid://coeo7hewrllio" path="res://assets/button_styles/easy_badge_hover.tres" id="14_c4xj4"]
 [ext_resource type="Texture2D" uid="uid://b2pw34w7r2y6e" path="res://images/next.png" id="15_acoyv"]
+[ext_resource type="Script" uid="uid://dkjls3nk4ymbu" path="res://scripts/badge_just_start.gd" id="15_c4xj4"]
+[ext_resource type="FontFile" uid="uid://lqr754wppokm" path="res://assets/fonts/Itim-Regular.ttf" id="15_pu0l3"]
+[ext_resource type="Texture2D" uid="uid://dhgfyf2hbrmgl" path="res://images/badgeamongus.png" id="16_sb2o5"]
 [ext_resource type="Texture2D" uid="uid://bnurr0l12urv7" path="res://images/music.png" id="16_tqjdn"]
+[ext_resource type="Script" uid="uid://bawp1bb2s5yc3" path="res://scripts/badge_69.gd" id="17_0f6n6"]
 [ext_resource type="Script" uid="uid://blwnkpls28rey" path="res://scripts/save_prompt.gd" id="17_acoyv"]
+[ext_resource type="Script" uid="uid://fl32i0ucxbdh" path="res://scripts/badge_420.gd" id="17_fpi78"]
+[ext_resource type="Script" uid="uid://byoxxmpg4gpr4" path="res://scripts/badge_novice.gd" id="18_pu0l3"]
+[ext_resource type="StyleBox" uid="uid://cqkhlvg52rhro" path="res://assets/button_styles/mid_badge_hover.tres" id="19_0f6n6"]
+[ext_resource type="Script" uid="uid://d2ruix207xijf" path="res://scripts/badge_1000.gd" id="21_0f6n6"]
+[ext_resource type="Texture2D" uid="uid://bvpyy0v123thg" path="res://images/tinyamongus.png" id="27_ghw01"]
+[ext_resource type="Script" uid="uid://dxroj1dqpijgt" path="res://scripts/texture_rect.gd" id="28_4ip62"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ovwv"]
 texture = ExtResource("2_kmipb")
@@ -334,6 +345,53 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8myu5"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(9.818673e-06, 0.7032039, 0.9562587, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6vk7"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6790656, 0.8830635, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kglv"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6790656, 0.8830635, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbk4j"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.6790656, 0.8830635, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fpi78"]
+texture = ExtResource("16_sb2o5")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dalle"]
 texture = ExtResource("14_4iri7")
 
@@ -386,6 +444,43 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_gfxnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1688, 852)]
+}
+
+[sub_resource type="Animation" id="Animation_rfkpw"]
+resource_name = "jump_walk"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1688, 852), Vector2(1576.5, 823), Vector2(1465, 852), Vector2(1428, 813), Vector2(1317, 852), Vector2(1242.5, 806), Vector2(1168, 852), Vector2(1077.5, 810), Vector2(987, 852)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73bn3"]
+_data = {
+&"RESET": SubResource("Animation_gfxnk"),
+&"jump_walk": SubResource("Animation_rfkpw")
+}
 
 [node name="Clicker" type="Control"]
 layout_mode = 3
@@ -536,7 +631,6 @@ script = ExtResource("7_61uux")
 [node name="===Clciker Shop===" type="Node" parent="ShopPanel"]
 
 [node name="ClickersUpgrades" type="ScrollContainer" parent="ShopPanel"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -568,8 +662,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("9_bc8na")
-theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("9_w8f71")
 theme_override_styles/hover = ExtResource("10_alqnx")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qtuxs")
@@ -595,8 +689,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("9_bc8na")
-theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("9_w8f71")
 theme_override_styles/hover = ExtResource("10_alqnx")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_alqnx")
@@ -622,8 +716,8 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("9_bc8na")
-theme_override_styles/pressed = ExtResource("9_bc8na")
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("9_w8f71")
 theme_override_styles/hover = ExtResource("10_alqnx")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iwfre")
@@ -650,7 +744,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("9_bc8na")
+theme_override_styles/normal = ExtResource("9_w8f71")
 theme_override_styles/pressed = ExtResource("10_alqnx")
 theme_override_styles/hover = ExtResource("10_alqnx")
 theme_override_styles/disabled = ExtResource("11_iwfre")
@@ -678,9 +772,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("10_qtuxs")
-theme_override_styles/pressed = ExtResource("12_alqnx")
-theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/normal = ExtResource("12_sb2o5")
+theme_override_styles/pressed = ExtResource("12_sb2o5")
+theme_override_styles/hover = ExtResource("12_sb2o5")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3qr02")
 text = "Auto task completer (80 APS)"
@@ -706,9 +800,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("10_qtuxs")
-theme_override_styles/pressed = ExtResource("12_alqnx")
-theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/normal = ExtResource("12_sb2o5")
+theme_override_styles/pressed = ExtResource("12_sb2o5")
+theme_override_styles/hover = ExtResource("12_sb2o5")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4iri7")
 text = "Vent cLICKER (300 APS)"
@@ -734,9 +828,9 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = ExtResource("10_qtuxs")
-theme_override_styles/pressed = ExtResource("12_alqnx")
-theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/normal = ExtResource("12_sb2o5")
+theme_override_styles/pressed = ExtResource("12_sb2o5")
+theme_override_styles/hover = ExtResource("12_sb2o5")
 theme_override_styles/disabled = ExtResource("11_iwfre")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_acoyv")
 text = "Security camera farm (1,200 aps)"
@@ -925,6 +1019,439 @@ theme_override_fonts/font = ExtResource("8_61uux")
 theme_override_font_sizes/font_size = 60
 text = "100"
 
+[node name="User5" type="HBoxContainer" parent="ShopPanel/UserUpgrades/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Cyan" type="Button" parent="ShopPanel/UserUpgrades/VBoxContainer/User5"]
+custom_minimum_size = Vector2(608, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_8myu5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a6vk7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7kglv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rbk4j")
+text = "Cyan Among US "
+
+[node name="Label" type="Label" parent="ShopPanel/UserUpgrades/VBoxContainer/User5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 60
+text = "100"
+
+[node name="UserItemLabel" type="Label" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.0
+offset_top = 113.0
+offset_right = -73.0
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 80
+text = "Item"
+
+[node name="UserCostLabel" type="Label" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 215.0
+offset_top = 118.0
+offset_right = 303.0
+offset_bottom = 198.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("8_61uux")
+theme_override_font_sizes/font_size = 80
+text = "COST"
+
+[node name="===Badges===" type="Node" parent="ShopPanel"]
+
+[node name="Badges" type="ScrollContainer" parent="ShopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -441.0
+offset_top = -234.5
+offset_right = 437.0
+offset_bottom = 339.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ShopPanel/Badges"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="BadgePanel" type="Button" parent="ShopPanel/Badges/VBoxContainer"]
+custom_minimum_size = Vector2(878, 125)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("14_c4xj4")
+theme_override_styles/hover = ExtResource("14_c4xj4")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = ExtResource("14_c4xj4")
+script = ExtResource("15_c4xj4")
+
+[node name="BadgeTitle" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -57.5
+offset_right = 174.0
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 40
+text = "Just getting started"
+
+[node name="BadgeDetail" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -13.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Have a score of 100"
+
+[node name="Claim1" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 17.0
+offset_right = 848.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="Claim2" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="ClaimPrompt" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 83.0
+offset_right = 608.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Click & Claim 25 Amongs!"
+
+[node name="BadgePanel5" type="Button" parent="ShopPanel/Badges/VBoxContainer"]
+custom_minimum_size = Vector2(878, 125)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("14_c4xj4")
+theme_override_styles/hover = ExtResource("14_c4xj4")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = ExtResource("14_c4xj4")
+script = ExtResource("17_0f6n6")
+
+[node name="BadgeTitle" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -57.5
+offset_right = 174.0
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 40
+text = "69 Times in the Washroom"
+horizontal_alignment = 1
+
+[node name="BadgeDetail" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -13.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Have a score of 69"
+
+[node name="Claim1_B5" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel5"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 17.0
+offset_right = 848.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="Claim2_B5" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel5"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="ClaimPrompt_B5" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel5"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 83.0
+offset_right = 608.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Click & Claim 69 Amongs!"
+
+[node name="BadgePanel4" type="Button" parent="ShopPanel/Badges/VBoxContainer"]
+custom_minimum_size = Vector2(878, 125)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("14_c4xj4")
+theme_override_styles/hover = ExtResource("14_c4xj4")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = ExtResource("14_c4xj4")
+script = ExtResource("17_fpi78")
+
+[node name="BadgeTitle" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -57.5
+offset_right = 174.0
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 40
+text = "4:20 AM"
+horizontal_alignment = 1
+
+[node name="BadgeDetail" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -13.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Have a score of 420"
+
+[node name="Claim1_B4" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel4"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 17.0
+offset_right = 848.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="Claim2_B4" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel4"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="ClaimPrompt_B4" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel4"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 83.0
+offset_right = 608.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Click & Claim 42 Amongs!"
+
+[node name="BadgePanel2" type="Button" parent="ShopPanel/Badges/VBoxContainer"]
+custom_minimum_size = Vector2(878, 125)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("9_w8f71")
+theme_override_styles/pressed = ExtResource("14_c4xj4")
+theme_override_styles/hover = ExtResource("14_c4xj4")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = ExtResource("14_c4xj4")
+script = ExtResource("18_pu0l3")
+
+[node name="BadgeTitle" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -57.5
+offset_right = 174.0
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 40
+text = "Ahh.... novice"
+horizontal_alignment = 1
+
+[node name="BadgeDetail" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -13.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Have a score of 500"
+
+[node name="Claim1_B2" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel2"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 17.0
+offset_right = 848.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="Claim2_B2" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="ClaimPrompt_B2" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel2"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 83.0
+offset_right = 608.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Click & Claim 50 Amongs!"
+
+[node name="BadgePanel3" type="Button" parent="ShopPanel/Badges/VBoxContainer"]
+custom_minimum_size = Vector2(878, 125)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = ExtResource("12_sb2o5")
+theme_override_styles/pressed = ExtResource("19_0f6n6")
+theme_override_styles/hover = ExtResource("12_alqnx")
+theme_override_styles/disabled = ExtResource("11_iwfre")
+theme_override_styles/focus = ExtResource("12_alqnx")
+script = ExtResource("21_0f6n6")
+
+[node name="BadgeTitle" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -57.5
+offset_right = 174.0
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 40
+text = "Gimme gimme a grand"
+horizontal_alignment = 1
+
+[node name="BadgeDetail" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -13.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Have a score of 1000"
+
+[node name="Claim1_B3" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel3"]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 17.0
+offset_right = 848.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="Claim2_B3" type="Panel" parent="ShopPanel/Badges/VBoxContainer/BadgePanel3"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fpi78")
+
+[node name="ClaimPrompt_B3" type="Label" parent="ShopPanel/Badges/VBoxContainer/BadgePanel3"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 83.0
+offset_right = 608.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+text = "Click & Claim 500 Amongs!"
+
 [node name="ShopSystem" type="CanvasLayer" parent="."]
 
 [node name="Previous" type="Button" parent="."]
@@ -1067,6 +1594,30 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dalle")
 text = "NEW"
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -228.0
+offset_right = 82.00012
+offset_bottom = 154.00049
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("27_ghw01")
+expand_mode = 1
+stretch_mode = 4
+flip_h = true
+script = ExtResource("28_4ip62")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_73bn3")
+}
+
 [connection signal="button_down" from="AmongUs" to="." method="_on_among_us_button_down"]
 [connection signal="button_up" from="AmongUs" to="." method="_on_among_us_button_up"]
 [connection signal="pressed" from="ShopPanel/ClickerShop" to="." method="_on_clicker_shop_pressed"]
@@ -1084,6 +1635,12 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User2/Orange" to="." method="_on_orange_pressed"]
 [connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User3/Yellow" to="." method="_on_yellow_pressed"]
 [connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User4/Purple" to="." method="_on_purple_pressed"]
+[connection signal="pressed" from="ShopPanel/UserUpgrades/VBoxContainer/User5/Cyan" to="." method="_on_cyan_pressed"]
+[connection signal="pressed" from="ShopPanel/Badges/VBoxContainer/BadgePanel" to="Score" method="_on_badge_panel_pressed"]
+[connection signal="pressed" from="ShopPanel/Badges/VBoxContainer/BadgePanel5" to="Score" method="_on_badge_panel_5_pressed"]
+[connection signal="pressed" from="ShopPanel/Badges/VBoxContainer/BadgePanel4" to="Score" method="_on_badge_panel_4_pressed"]
+[connection signal="pressed" from="ShopPanel/Badges/VBoxContainer/BadgePanel2" to="Score" method="_on_badge_panel_2_pressed"]
+[connection signal="pressed" from="ShopPanel/Badges/VBoxContainer/BadgePanel3" to="Score" method="_on_badge_panel_3_pressed"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Play_Pause" to="." method="_on_play_pause_pressed"]
