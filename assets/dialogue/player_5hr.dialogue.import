@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://omgr3xwngjm4"
+path="res://.godot/imported/player_5hr.dialogue-15be4caac9d4ced2f7020c59b56ffe86.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/player_5hr.dialogue"
+dest_files=["res://.godot/imported/player_5hr.dialogue-15be4caac9d4ced2f7020c59b56ffe86.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,156 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct6ax1n7adu28"]
+
+[ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://c1rhc48bqgfpw" path="res://assets/fonts/Saira-Bold.ttf" id="2_0ctdu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fbfq"]
+texture = ExtResource("1_2ckv8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gwij"]
+bg_color = Color(0.8894503, 0.5367276, 0.20062017, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG_Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -578.0
+offset_top = 6.0
+offset_right = 726.8889
+offset_bottom = 740.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2fbfq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 88.0
+offset_right = 1570.0
+offset_bottom = 944.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8gwij")
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.5
+offset_top = 30.0
+offset_right = 82.5
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="Music" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -574.0
+offset_top = 186.0
+offset_right = -243.0
+offset_bottom = 344.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 75
+text = "Music"
+
+[node name="Msg" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 176.0
+offset_right = 601.0
+offset_bottom = 334.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 75
+text = "Message from Dev"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 309.0
+offset_right = 566.0
+offset_bottom = 783.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+text = "Song: Irokz - Goodbye My Love
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/GoodbyeMyLove
+Watch: http://ncs.lnk.to/GoodbyeMyLoveAT/youtube
+
+Song: Spektrem - Stutterfly
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/Stutterfly
+Watch: http://ncs.lnk.to/StutterflyAT/youtube
+
+Song: Matt Pridgyn - Second Wind
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/SecondWind
+Watch: http://ncs.lnk.to/SecondWindAT/youtube
+
+Song: noaa! - HYPNOTIZED!
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/HYPNOTIZED
+Watch: http://ncs.lnk.to/HYPNOTIZEDAT/youtube
+
+Song: Lost Sky x Shiah Maisel - Lost pt. II
+Music provided by NoCopyrightSounds
+Free Download/Stream: http://ncs.io/lostptii
+Watch: http://ncs.lnk.to/lostptiiAT/youtube
+"
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 605.0
+offset_top = 305.0
+offset_right = 1113.0
+offset_bottom = 779.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 30
+text = "This game is neither endorsed or 
+sponsored by Innersloth. 
+This game serves as a fan remix of 
+the popular game Cookie Clicker, 
+fused with another popular game 
+Among Us.
+All names of items are made by me 
+and solely me.
+
+This game was hectic to design, with
+millions of bugs, but it was all worth it to 
+build what I call a really fun game!"

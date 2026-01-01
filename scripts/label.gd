@@ -174,22 +174,52 @@ func _process(delta: float) -> void:
 		emit_signal("score_500")
 		badges_unlocked[3] = true
 		emitted_500 = true
+		animation_player.speed_scale = 2
+		animation_player.play("jump_walk")
+		await get_tree().create_timer(2.75).timeout
+		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_500_badge.dialogue"))
+		await get_tree().create_timer(1).timeout
+		animation_player.play("jump_walk_reverse")
 	if score >= 420 and not emitted_420:
 		emit_signal("score_420")
 		badges_unlocked[2] = true
 		emitted_420 = true
+		animation_player.speed_scale = 2
+		animation_player.play("jump_walk")
+		await get_tree().create_timer(2.75).timeout
+		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_420_badge.dialogue"))
+		await get_tree().create_timer(1).timeout
+		animation_player.play("jump_walk_reverse")
 	if score >= 69 and not emitted_69:
 		emit_signal("score_69")
 		badges_unlocked[1] = true
 		emitted_69 = true
+		animation_player.speed_scale = 2
+		animation_player.play("jump_walk")
+		await get_tree().create_timer(2.75).timeout
+		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_69_badge.dialogue"))
+		await get_tree().create_timer(1).timeout
+		animation_player.play("jump_walk_reverse")
 	if score >= 1000 and not emitted_1000:
 		emit_signal("score_1000")
 		badges_unlocked[4] = true
 		emitted_1000 = true
+		animation_player.speed_scale = 2
+		animation_player.play("jump_walk")
+		await get_tree().create_timer(2.75).timeout
+		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_1000_badge.dialogue"))
+		await get_tree().create_timer(1).timeout
+		animation_player.play("jump_walk_reverse")
 	if score >= 5000 and not emitted_5000:
 		emit_signal("score_5000")
 		badges_unlocked[5] = true
 		emitted_5000 = true
+		animation_player.speed_scale = 2
+		animation_player.play("jump_walk")
+		await get_tree().create_timer(2.75).timeout
+		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_5000_badge.dialogue"))
+		await get_tree().create_timer(1).timeout
+		animation_player.play("jump_walk_reverse")
 	_shop_control()
 
 func _shop_control() -> void:

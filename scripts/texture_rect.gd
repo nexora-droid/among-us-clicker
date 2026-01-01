@@ -2,8 +2,7 @@ extends TextureRect
 
 var time_spent := [
 	{"timer": 3600, "callback": "play_event_1hr"}, # 1hr
-	{"timer": 7200, "callback": "play_event_2hr"},
-	{"timer": 36000, "callback": "play_event_10hr"}
+	{"timer": 18000, "callback": "play_event_5hr"},
 ]
 var elapsed_time := 0.0
 var testing_bool := false
@@ -19,4 +18,7 @@ func _process(delta: float) -> void:
 			event["triggered"] = true
 
 func play_event_1hr() -> void:
+	DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"),load("res://assets/dialogue/player_1hr.dialogue"))
+	
+func play_event_5hr() -> void:
 	DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"),load("res://assets/dialogue/player_1hr.dialogue"))

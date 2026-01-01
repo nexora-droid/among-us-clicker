@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://ewqvn70hrw1j"]
+[gd_scene load_steps=98 format=3 uid="uid://ewqvn70hrw1j"]
 
 [ext_resource type="Script" uid="uid://ocxyd8j27h7f" path="res://scripts/clicker.gd" id="1_tph31"]
 [ext_resource type="Texture2D" uid="uid://bpf3ggwvxy1q6" path="res://images/amonguspsace.jpg" id="2_kmipb"]
@@ -446,6 +446,61 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f511a"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.79840124, 0.62874603, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2uekq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9899003, 0.77918625, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efitq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9899003, 0.77918625, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yygbx"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9899003, 0.77918625, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e07e1"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.9899003, 0.77918625, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [sub_resource type="Animation" id="Animation_gfxnk"]
 length = 0.001
 tracks/0/type = "value"
@@ -526,7 +581,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73bn3"]
@@ -1130,6 +1185,7 @@ text = "COST"
 [node name="===Badges===" type="Node" parent="ShopPanel"]
 
 [node name="Badges" type="ScrollContainer" parent="ShopPanel"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1720,6 +1776,21 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dalle")
 text = "NEW"
 metadata/_edit_use_anchors_ = true
 
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 24.0
+offset_right = 274.0
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("15_pu0l3")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_f511a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2uekq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_efitq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yygbx")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e07e1")
+text = "View Credits & Game Notes"
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 3
@@ -1774,3 +1845,4 @@ libraries = {
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="pressed" from="SaveMenu/Panel/Continue" to="SaveMenu" method="_on_continue_pressed"]
 [connection signal="pressed" from="SaveMenu/Panel/New" to="SaveMenu" method="_on_new_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

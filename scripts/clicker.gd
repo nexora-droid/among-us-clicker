@@ -212,3 +212,7 @@ func _on_cyan_pressed() -> void:
 	among_us.add_theme_stylebox_override("hover", load("res://assets/button_styles/cyan_amongus.tres"))
 	among_us.add_theme_stylebox_override("pressed", load("res://assets/button_styles/cyan_amongus.tres"))
 	among_us.add_theme_stylebox_override("focus", load("res://assets/button_styles/cyan_amongus.tres"))
+
+
+func _on_credits_pressed() -> void:
+	pass # Replace with function body.
