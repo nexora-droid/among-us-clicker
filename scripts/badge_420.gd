@@ -15,8 +15,16 @@ func _ready() -> void:
 	claim_prompt_b_4.hide()
 	score.connect("score_420", Callable(self, "_on_score_reach_420"))
 	score.connect("badge4_claimed", Callable(self, "_on_badge4_claimed"))
-	
+	if score.badges_unlocked[2]:
+		_on_score_reach_420()
+	if score.badges_claimed[2]:
+		_on_badge4_claimed()
 func _on_score_reach_420() -> void:
+	if score.badges_claimed[2]:
+		disabled = true
+		badge_title.show()
+		badge_detail.show()
+		return
 	disabled = false
 	badge_title.show()
 	badge_detail.show()

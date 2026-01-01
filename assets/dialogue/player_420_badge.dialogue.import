@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d2x1n1hys2nsq"
+path="res://.godot/imported/player_420_badge.dialogue-c3a5bec16b1ead0746358155420a2380.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/player_420_badge.dialogue"
+dest_files=["res://.godot/imported/player_420_badge.dialogue-c3a5bec16b1ead0746358155420a2380.tres"]
+
+[params]
+
+defaults=true

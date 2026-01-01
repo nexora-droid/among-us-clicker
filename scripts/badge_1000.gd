@@ -15,8 +15,16 @@ func _ready() -> void:
 	claim_prompt_b_3.hide()
 	score.connect("score_1000", Callable(self, "_on_score_reach_1000"))
 	score.connect("badge3_claimed", Callable(self, "_on_badge3_claimed"))
-	
+	if score.badges_unlocked[4]:
+		_on_score_reach_1000()
+	if score.badges_claimed[4]:
+		_on_badge3_claimed()
 func _on_score_reach_1000() -> void:
+	if score.badges_claimed[4]:
+		disabled = true
+		badge_title.show()
+		badge_detail.show()
+		return
 	disabled = false
 	badge_title.show()
 	badge_detail.show()
@@ -29,3 +37,4 @@ func _on_badge3_claimed() -> void:
 	badge_title.position = Vector2(274, 23)
 	badge_detail.position = Vector2(310, 67)
 	custom_minimum_size = Vector2(878, 115)
+	

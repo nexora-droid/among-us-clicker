@@ -17,6 +17,6 @@ func _process(delta: float) -> void:
 		if "triggered" not in event and elapsed_time >= event.timer:
 			call(event.callback)
 			event["triggered"] = true
-	if elapsed_time >= 10 and not testing_bool:
-		print("its 1min")
-		testing_bool = true
+
+func play_event_1hr() -> void:
+	DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"),load("res://assets/dialogue/player_1hr.dialogue"))

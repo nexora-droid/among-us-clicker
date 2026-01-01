@@ -6,6 +6,7 @@ extends Button
 @onready var claim_1_b_2: Panel = $Claim1_B2
 @onready var claim_2_b_2: Panel = $Claim2_B2
 @onready var claim_prompt_b_2: Label = $ClaimPrompt_B2
+
 func _ready() -> void:
 	disabled = true
 	badge_detail.hide()
@@ -15,8 +16,16 @@ func _ready() -> void:
 	claim_prompt_b_2.hide()
 	score.connect("score_500", Callable(self, "_on_score_reach_500"))
 	score.connect("badge2_claimed", Callable(self, "_on_badge2_claimed"))
-	
+	if score.badges_unlocked[3]:
+		_on_score_reach_500()
+	if score.badges_claimed[3]:
+		_on_badge2_claimed()
 func _on_score_reach_500() -> void:
+	if score.badges_claimed[3]:
+		disabled = true
+		badge_title.show()
+		badge_detail.show()
+		return
 	disabled = false
 	badge_title.show()
 	badge_detail.show()

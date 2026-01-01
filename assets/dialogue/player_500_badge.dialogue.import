@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bx73pumeer1v4"
+path="res://.godot/imported/player_500_badge.dialogue-d081a1d44f34ef23b0ba34d541ac75d8.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/player_500_badge.dialogue"
+dest_files=["res://.godot/imported/player_500_badge.dialogue-d081a1d44f34ef23b0ba34d541ac75d8.tres"]
+
+[params]
+
+defaults=true
