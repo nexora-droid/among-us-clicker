@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://snesnmf45j14"]
+[gd_scene load_steps=7 format=3 uid="uid://snesnmf45j14"]
 
 [ext_resource type="Script" uid="uid://blwnkpls28rey" path="res://scripts/save_prompt.gd" id="1_r5a0y"]
 [ext_resource type="FontFile" uid="uid://dwh2nitrs85pm" path="res://assets/fonts/In your face, joffrey!.ttf" id="2_7obqq"]
@@ -33,6 +33,18 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.003921569, 0.8862745, 0.627451, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5a0y"]
+bg_color = Color(4.042983e-06, 0.8879716, 0.62584686, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
@@ -87,6 +99,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_th0i3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_th0i3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jirvc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_r5a0y")
 theme_override_styles/focus = SubResource("StyleBoxFlat_th0i3")
 text = "Continue"
 metadata/_edit_use_anchors_ = true

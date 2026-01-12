@@ -208,7 +208,7 @@ func _process(delta: float) -> void:
 		animation_player.play("jump_walk")
 		await get_tree().create_timer(2.75).timeout
 		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_1000_badge.dialogue"))
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(15).timeout
 		animation_player.play("jump_walk_reverse")
 	if score >= 5000 and not emitted_5000:
 		emit_signal("score_5000")
@@ -218,7 +218,7 @@ func _process(delta: float) -> void:
 		animation_player.play("jump_walk")
 		await get_tree().create_timer(2.75).timeout
 		DialogueManager.show_dialogue_balloon_scene(load("res://scenes/lil_pink.tscn"), load("res://assets/dialogue/player_5000_badge.dialogue"))
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(15).timeout
 		animation_player.play("jump_walk_reverse")
 	_shop_control()
 
